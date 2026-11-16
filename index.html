@@ -3,72 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#09070e">
-<title>BARO | معاينة آمنة</title>
+<meta name="theme-color" content="#0b0711">
+<title>BARO | الشحن اليدوي</title>
 <style>
-:root{color-scheme:dark;--bg:#09070e;--panel:#17111f;--panel2:#21182c;--line:#49365d;--purple:#b98add;--text:#f6effb;--muted:#c3b3d0;--warn:#f3c77b}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#39234e 0,transparent 48%),var(--bg);color:var(--text);font-family:system-ui,"Noto Sans Arabic",Tahoma,sans-serif}
-.wrap{max-width:760px;margin:auto;padding:16px 14px 40px}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 2px 18px}
-.brand{font-weight:950;letter-spacing:2px;font-size:25px}.brand span{color:var(--purple)}
-.pill{border:1px solid #8867a1;color:#e7d4f6;background:#241a30;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:800}
-.notice{border:1px solid #80623b;background:#2a2117;color:#ffe1ad;border-radius:14px;padding:13px 14px;line-height:1.75;font-size:13px}
-.hero{margin:16px 0;padding:24px 18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#2b1d3a,#15101d 75%);box-shadow:0 16px 38px #0006}
-.eyebrow{color:var(--purple);font-size:12px;font-weight:900;letter-spacing:2px}.hero h1{font-size:clamp(26px,7vw,38px);margin:7px 0}.hero p{margin:0;color:var(--muted);line-height:1.8;font-size:14px}
-.section-title{margin:23px 2px 11px;font-size:17px;color:#e8d7f4}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.tab{padding:12px 7px;border-radius:12px;border:1px solid var(--line);background:#17111f;color:#e9dff1;font-weight:800}
-.tab.active{background:#4a3260;border-color:#bd91df;box-shadow:0 0 0 1px #bd91df33 inset}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.product{padding:14px 12px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(155deg,#21182c,#15101c);text-align:right;min-width:0}
-.product strong{display:block;font-size:14px;line-height:1.6}.product small{display:block;color:var(--muted);margin-top:5px;font-size:11px}
-.product button{width:100%;margin-top:11px;padding:10px;border-radius:10px;border:1px solid #75558e;background:#2d203a;color:#f5eafa;font-weight:800}
-.product button.selected{background:#69468a;border-color:#d1a9f0}
-.form{margin-top:17px;padding:16px;border:1px solid var(--line);border-radius:17px;background:var(--panel)}
-label{display:block;color:#d9c8e5;font-size:13px;font-weight:750;margin:12px 0 6px}
-input,textarea{width:100%;padding:13px;border:1px solid #59456b;border-radius:11px;background:#0d0a12;color:#fff;font:inherit;font-size:16px}
-input::placeholder,textarea::placeholder{color:#887b92}
-.submit{width:100%;margin-top:15px;padding:14px;border:0;border-radius:12px;background:#72518b;color:white;font-weight:900;font-size:15px}
-.submit:disabled{opacity:.55}
-.result{display:none;margin-top:12px;padding:12px;border:1px solid #80623b;background:#2a2117;color:#ffe1ad;border-radius:11px;line-height:1.7;font-size:13px}
-.foot{text-align:center;color:#9f90ab;font-size:11px;line-height:1.8;margin-top:24px}
-@media(max-width:390px){.wrap{padding-inline:11px}.cards{grid-template-columns:1fr}.brand{font-size:22px}.hero{padding:20px 15px}}
+:root{color-scheme:dark;--bg:#0b0711;--panel:#171020;--panel2:#21152e;--line:#49345d;--purple:#c18bea;--pink:#ef9bd4;--text:#faf5ff;--muted:#b9a9c8;--gold:#f2ca82}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -12%,#48245f 0,transparent 46%),var(--bg);color:var(--text);font-family:system-ui,"Noto Sans Arabic",Tahoma,sans-serif}
+.wrap{max-width:760px;margin:auto;padding:14px 13px 42px}.top{display:flex;align-items:center;justify-content:space-between;padding:8px 2px 16px}.brand{font-weight:1000;letter-spacing:2px;font-size:27px}.brand span{color:var(--purple)}.pill{border:1px solid #8d6aa5;background:#261a32;color:#efdafa;border-radius:99px;padding:7px 11px;font-size:11px;font-weight:850}
+.notice{border:1px solid #80613c;background:#2a2117;color:#ffe5b9;border-radius:14px;padding:12px 14px;line-height:1.8;font-size:12px}
+.hero{position:relative;overflow:hidden;margin:14px 0 18px;padding:23px 18px;border:1px solid #624477;border-radius:22px;background:linear-gradient(125deg,#3a2350,#1b1226 62%,#25162f);box-shadow:0 16px 38px #0007}
+.hero:after{content:"✦";position:absolute;left:22px;top:4px;font-size:84px;color:#d9a9f322}.eyebrow{color:#d5a5f2;font-size:11px;font-weight:950;letter-spacing:2px}.hero h1{font-size:clamp(27px,7vw,39px);margin:8px 0}.hero p{margin:0;color:#d1c2dc;line-height:1.9;font-size:13px;max-width:500px}
+.stats{display:flex;gap:8px;margin-top:17px;flex-wrap:wrap}.stat{border:1px solid #75588a;background:#20162b;border-radius:11px;padding:8px 11px;font-size:11px;color:#e9d9f4}.stat b{color:#d9adf3}
+.section-title{margin:21px 2px 10px;font-size:16px;color:#f0defb}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.tab{min-height:58px;padding:9px 5px;border-radius:14px;border:1px solid var(--line);background:#171020;color:#e9dff1;font-weight:900;font-size:12px}.tab .emoji{display:block;font-size:20px;margin-bottom:3px}.tab.active{background:linear-gradient(140deg,#69448a,#3a2550);border-color:#d4a5f2;box-shadow:0 0 0 1px #d4a5f233 inset}
+.toolbar{display:flex;gap:8px;margin:12px 0}.search{flex:1;min-width:0;padding:12px 13px;border:1px solid #59436b;border-radius:12px;background:#100b17;color:white;font:inherit;font-size:14px}.count{align-self:center;color:var(--muted);font-size:11px;white-space:nowrap}
+.groups{display:flex;gap:7px;overflow:auto;padding:1px 0 10px;scrollbar-width:none}.groups button{white-space:nowrap;border:1px solid #503b62;background:#171020;color:#d9c8e6;border-radius:99px;padding:8px 12px;font-size:11px;font-weight:800}.groups button.active{background:#56366e;border-color:#bb8bdb;color:white}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product{position:relative;min-width:0;padding:13px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(155deg,#24182f,#15101d);text-align:right;transition:.15s}.product.selected{border-color:#d0a1ef;box-shadow:0 0 0 1px #d0a1ef44 inset}.product .symbol{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#69438a,#30203e);font-size:20px;margin-bottom:9px}.product strong{display:block;font-size:13px;line-height:1.65;min-height:42px}.product small{display:block;color:var(--muted);margin-top:4px;font-size:10px}.price-note{color:#c8a6dc!important}.product button{width:100%;margin-top:11px;padding:10px;border-radius:10px;border:1px solid #76558e;background:#30213d;color:#f8edff;font-weight:850;font-size:12px}.product button.selected{background:#69468a;border-color:#d1a9f0}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:28px 10px;border:1px dashed #59436b;border-radius:14px}
+.form{margin-top:19px;padding:16px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,#1b1325,#120d18)}.formhead{display:flex;align-items:center;justify-content:space-between;gap:8px}.formhead h2{font-size:16px;margin:0}.formtag{font-size:10px;color:#d8b5ef;border:1px solid #614778;border-radius:99px;padding:5px 8px}
+.chosen{margin:13px 0;padding:11px;border-radius:11px;background:#261a32;color:#e6c9fa;font-size:12px;font-weight:850;line-height:1.7}
+label{display:block;color:#d9c8e5;font-size:12px;font-weight:800;margin:12px 0 6px}input,textarea{width:100%;padding:12px;border:1px solid #59456b;border-radius:11px;background:#0d0a12;color:#fff;font:inherit;font-size:15px}input::placeholder,textarea::placeholder{color:#887b92}
+.hint{font-size:10px;color:#a99ab6;margin-top:5px;line-height:1.7}.submit{width:100%;margin-top:15px;padding:14px;border:0;border-radius:12px;background:#705080;color:white;font-weight:950;font-size:14px}.submit:disabled{opacity:.58}
+.result{display:none;margin-top:12px;padding:12px;border:1px solid #80623b;background:#2a2117;color:#ffe1ad;border-radius:11px;line-height:1.7;font-size:12px}
+.foot{text-align:center;color:#9f90ab;font-size:10px;line-height:1.9;margin-top:23px}
+@media(max-width:390px){.wrap{padding-inline:10px}.cards{grid-template-columns:1fr}.brand{font-size:23px}.hero{padding:20px 15px}.product{display:grid;grid-template-columns:42px 1fr;column-gap:10px}.product .symbol{grid-row:1/3}.product strong{min-height:0}.product small{margin-top:0}.product button{grid-column:1/-1}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header class="top"><div class="brand">BAR<span>O</span></div><div class="pill">وضع المعاينة فقط</div></header>
-<div class="notice"><strong>🔒 استقبال الطلبات مغلق</strong><br>هذه نسخة اختبار مستقلة. يمكنك التنقل واختيار منتج وتجربة إدخال المعرّف، لكن لا يتم إنشاء طلب أو إرسال بيانات أو خصم أي رصيد.</div>
-<section class="hero"><div class="eyebrow">BARAN GAME · MANUAL TOP-UP</div><h1>BARO للشحن اليدوي</h1><p>واجهة معاينة لقسم الشحن اليدوي. اختر اللعبة ثم المنتج، وراجع شكل نموذج الطلب على هاتفك.</p></section>
-<h2 class="section-title">1. اختر اللعبة</h2>
+<header class="top"><div class="brand">BAR<span>O</span></div><div class="pill">نسخة تجريبية آمنة</div></header>
+<div class="notice"><b>🔒 استقبال الطلبات مغلق حالياً</b><br>هذه معاينة للمنتجات والتصميم فقط. لا يتم إرسال بيانات أو إنشاء طلبات أو خصم رصيد أو الاتصال بأي مورد.</div>
+<section class="hero"><div class="eyebrow">BARAN GAME · MANUAL TOP-UP</div><h1>BARO للشحن اليدوي</h1><p>اختَر لعبتك، تصفّح المنتجات، وجرّب شكل بيانات الحساب. جهّزنا الأقسام الثلاثة وفق كتالوج ليو، من دون عرض أسعار التكلفة الداخلية.</p><div class="stats"><div class="stat"><b>3</b> أقسام ألعاب</div><div class="stat"><b>32</b> خياراً بالكتالوج</div><div class="stat">الأسعار: <b>غير معروضة</b></div></div></section>
+<h2 class="section-title">1 · اختر القسم</h2>
 <div class="tabs" role="tablist">
-<button class="tab active" data-cat="pubg">PUBG MOBILE</button><button class="tab" data-cat="freefire">FREE FIRE</button><button class="tab" data-cat="jawaker">JAWAKER</button>
+<button class="tab active" data-cat="pubg"><span class="emoji">🎯</span>PUBG MOBILE</button>
+<button class="tab" data-cat="freefire"><span class="emoji">🔥</span>FREE FIRE</button>
+<button class="tab" data-cat="jawaker"><span class="emoji">🃏</span>JAWAKER</button>
 </div>
-<h2 class="section-title">2. اختر المنتج</h2>
+<h2 class="section-title">2 · اختر المنتج</h2>
+<div class="toolbar"><input class="search" id="search" type="search" placeholder="ابحث ضمن منتجات القسم..." aria-label="البحث عن منتج"><span class="count" id="count"></span></div>
+<div class="groups" id="groups"></div>
 <div class="cards" id="products"></div>
 <section class="form">
-<h2 class="section-title" style="margin-top:0">3. بيانات المعاينة</h2>
-<div id="chosen" style="color:var(--purple);font-weight:850">لم يتم اختيار منتج بعد</div>
-<label for="player">معرّف اللاعب / الحساب</label>
+<div class="formhead"><h2>3 · بيانات المعاينة</h2><span class="formtag">لا يتم الإرسال</span></div>
+<div class="chosen" id="chosen">لم يتم اختيار منتج بعد</div>
+<label id="playerLabel" for="player">معرّف اللاعب (PUBG ID)</label>
 <input id="player" maxlength="80" placeholder="أدخل معرّفاً تجريبياً فقط" dir="ltr" autocomplete="off">
-<div id="quantityWrap" hidden><label for="quantity">كمية جواكر (10,000 إلى 1,000,000)</label><input id="quantity" type="number" min="10000" max="1000000" step="1000" value="10000"></div>
-<label for="note">ملاحظة (اختياري)</label><textarea id="note" rows="2" maxlength="300" placeholder="تجربة شكل الحقل فقط"></textarea>
+<div class="hint" id="playerHint">تأكد من صحة المعرّف قبل أي طلب فعلي مستقبلاً.</div>
+<div id="quantityWrap" hidden><label for="quantity">كمية التوكنز</label><input id="quantity" type="number" min="10000" max="1000000" step="1000" value="10000"><div class="hint">الحد الأدنى 10,000 والحد الأعلى 1,000,000 توكن.</div></div>
+<label for="note">ملاحظة (اختياري)</label><textarea id="note" rows="2" maxlength="300" placeholder="ملاحظة تجريبية فقط"></textarea>
 <button class="submit" id="send" disabled>إرسال طلب تجريبي — معطّل</button>
 <div class="result" id="result" role="status"></div>
 </section>
-<div class="foot">BARO Preview · لا اتصال بقاعدة البيانات · لا تسجيل دخول · لا دفع · لا طلبات حقيقية<br>نسخة مستقلة لمراجعة التصميم وتجربة الهاتف فقط.</div>
+<div class="foot">BARO Preview · لا اتصال بقاعدة البيانات · لا تسجيل دخول · لا دفع · لا طلبات حقيقية<br>أسعار المورد غير ظاهرة للزبائن، ولا تُعتمد أسعار البيع قبل مراجعتها.</div>
 </div>
 <script>
 const catalog={
- pubg:[["60 UC","PUBG MOBILE"],["325 UC","PUBG MOBILE"],["660 UC","PUBG MOBILE"],["1800 UC","PUBG MOBILE"],["Prime — شهر واحد","اشتراك"],["Prime Plus — شهر واحد","اشتراك"],["حزمة الشراء الأول","حزمة"],["حزمة الشعار الخرافي","حزمة"],["حزمة الصفقة الأسبوعية 1","حزمة"],["حزمة الصفقة الأسبوعية 2","حزمة"],["حزمة ترقية الأسلحة النارية","حزمة"]],
- freefire:[["110 جوهرة","Free Fire"],["210 جوهرة","Free Fire"],["583 جوهرة","Free Fire"],["1188 جوهرة","Free Fire"],["2420 جوهرة","Free Fire"],["عضوية أسبوعية","اشتراك"]],
- jawaker:[["جواكر سيرفر 1 — الحد الأدنى 10,000 توكن","توكنز"],["جواكر سيرفر 2 — الحد الأدنى 10,000 توكن","توكنز"],["المسرّع الأحمر","مسرّعات"],["المسرّع الأزرق","مسرّعات"],["المسرّع الأسود","مسرّعات"],["المسرّع الذهبي","مسرّعات"]]
+ pubg:[
+ {n:"60 UC",g:"شدات",i:"💎"},{n:"325 UC",g:"شدات",i:"💎"},{n:"660 UC",g:"شدات",i:"💎"},{n:"1,800 UC",g:"شدات",i:"💎"},{n:"3,850 UC",g:"شدات",i:"💎"},{n:"8,100 UC",g:"شدات",i:"💎"},
+ {n:"حزمة الشراء الأول",g:"حزم الازدهار",i:"🎁"},{n:"حزمة ترقية الأسلحة النارية",g:"حزم الازدهار",i:"🔫"},{n:"حزمة الشعار الخرافي",g:"حزم الازدهار",i:"🏆"},{n:"حزمة الصفقة الأسبوعية 1",g:"حزم الازدهار",i:"📦"},{n:"حزمة الصفقة الأسبوعية 2",g:"حزم الازدهار",i:"📦"},{n:"حزمة الشعار الخرافي الأسبوعية",g:"حزم الازدهار",i:"🏆"},
+ ...[1,3,6,12].map(m=>({n:"Prime — "+m+" "+(m===1?"شهر":"أشهر"),g:"Prime",i:"⭐"})),
+ ...[1,3,6,12].map(m=>({n:"Prime Plus — "+m+" "+(m===1?"شهر":"أشهر"),g:"Prime Plus",i:"👑"}))
+ ],
+ freefire:[
+ ...[110,210,583,1188,2420].map(v=>({n:v+" جوهرة",g:"جواهر",i:"💎"})),
+ {n:"عضوية أسبوعية",g:"عضويات",i:"👑"}
+ ],
+ jawaker:[
+ {n:"جواكر سيرفر 1",g:"جواكر توكنز",i:"🃏",q:true},{n:"جواكر سيرفر 2",g:"جواكر توكنز",i:"🃏",q:true},
+ {n:"المسرّع الأحمر",g:"مسرّعات جواكر",i:"🔴"},{n:"المسرّع الأزرق",g:"مسرّعات جواكر",i:"🔵"},{n:"المسرّع الأسود",g:"مسرّعات جواكر",i:"⚫"},{n:"المسرّع الذهبي",g:"مسرّعات جواكر",i:"🟡"}
+ ]
 };
-let category="pubg",selected=null;
-const products=document.getElementById("products"),chosen=document.getElementById("chosen"),send=document.getElementById("send");
-function render(){products.replaceChildren();catalog[category].forEach(([name,type])=>{const card=document.createElement("article");card.className="product";const strong=document.createElement("strong");strong.textContent=name;const small=document.createElement("small");small.textContent=type+" · معاينة";const btn=document.createElement("button");btn.textContent=selected===name?"تم الاختيار ✓":"اختيار المنتج";if(selected===name)btn.className="selected";btn.onclick=()=>{selected=name;chosen.textContent="المنتج المختار: "+name;send.disabled=false;send.textContent="إرسال طلب تجريبي — معطّل";document.getElementById("quantityWrap").hidden=!(category==="jawaker"&&name.includes("توكنز"));render()};card.append(strong,small,btn);products.append(card)})}
-document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>{category=btn.dataset.cat;selected=null;chosen.textContent="لم يتم اختيار منتج بعد";send.disabled=true;document.getElementById("quantityWrap").hidden=true;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b===btn));render()}));
-send.addEventListener("click",()=>{const box=document.getElementById("result");box.style.display="block";box.textContent="هذه معاينة فقط: لم يتم إرسال أي طلب، ولم يتم الاتصال بالمورد أو بقاعدة البيانات."});
-render();
+const cats={pubg:"PUBG MOBILE",freefire:"FREE FIRE",jawaker:"JAWAKER"};
+let category="pubg",group="الكل",selected=null;
+const products=document.getElementById("products"),groups=document.getElementById("groups"),chosen=document.getElementById("chosen"),send=document.getElementById("send"),search=document.getElementById("search");
+function renderGroups(){const list=["الكل",...new Set(catalog[category].map(p=>p.g))];groups.replaceChildren();list.forEach(g=>{const b=document.createElement("button");b.textContent=g;b.className=group===g?"active":"";b.onclick=()=>{group=g;renderGroups();render()};groups.append(b)})}
+function render(){products.replaceChildren();const q=search.value.trim().toLowerCase();const list=catalog[category].filter(p=>(group==="الكل"||p.g===group)&&(!q||(p.n+" "+p.g).toLowerCase().includes(q)));document.getElementById("count").textContent=list.length+" منتج";if(!list.length){const e=document.createElement("div");e.className="empty";e.textContent="ما لقينا منتج مطابق للبحث.";products.append(e);return}
+list.forEach(p=>{const card=document.createElement("article");card.className="product"+(selected===p.n?" selected":"");const symbol=document.createElement("div");symbol.className="symbol";symbol.textContent=p.i;const title=document.createElement("strong");title.textContent=p.n;const small=document.createElement("small");small.textContent=p.g+" · BARO";const price=document.createElement("small");price.className="price-note";price.textContent="سعر البيع يحدد بعد الاعتماد";const btn=document.createElement("button");btn.textContent=selected===p.n?"تم الاختيار ✓":"اختيار المنتج";if(selected===p.n)btn.className="selected";btn.onclick=()=>choose(p);card.append(symbol,title,small,price,btn);products.append(card)})}
+function choose(p){selected=p.n;chosen.textContent="المنتج المختار: "+p.n;send.disabled=true;send.textContent="إرسال طلب تجريبي — معطّل";document.getElementById("quantityWrap").hidden=!(category==="jawaker"&&p.q);render();document.querySelector(".form").scrollIntoView({behavior:"smooth",block:"nearest"})}
+function changeCat(c){category=c;group="الكل";selected=null;chosen.textContent="لم يتم اختيار منتج بعد";send.disabled=true;document.getElementById("quantityWrap").hidden=true;search.value="";document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.cat===c));const labels={pubg:["معرّف اللاعب (PUBG ID)","أدخل PUBG ID تجريبياً"],freefire:["معرّف اللاعب (Free Fire UID)","أدخل Free Fire UID تجريبياً"],jawaker:["معرّف حساب جواكر (ID)","أدخل Jawaker ID تجريبياً"]};document.getElementById("playerLabel").textContent=labels[c][0];document.getElementById("player").placeholder=labels[c][1];document.getElementById("playerHint").textContent=c==="jawaker"?"راجع رقم الحساب وحدد السيرفر الصحيح قبل أي طلب فعلي مستقبلاً.":"تأكد من صحة المعرّف قبل أي طلب فعلي مستقبلاً.";renderGroups();render()}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>changeCat(b.dataset.cat)));search.addEventListener("input",render);
+document.getElementById("send").addEventListener("click",()=>{const box=document.getElementById("result");box.style.display="block";box.textContent="هذه معاينة فقط: لم يتم إرسال أي طلب، ولم يتم الاتصال بالمورد أو بقاعدة البيانات."});
+renderGroups();render();
 </script>
 </body></html>
